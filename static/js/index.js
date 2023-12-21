@@ -15,6 +15,10 @@ input_file.addEventListener("change", function () {
 
 // アップロードボタンが押下時の処理
 upload_button.onclick = function () {
+    // メッセージコンテナを非表示に
+    errorContainer.style.display = "none";
+    successContainer.style.display = "none";
+
     // データ送信用のフォーマットを作成
     let formData = new FormData();
     formData.append("data", data);
