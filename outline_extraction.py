@@ -14,4 +14,3 @@ cv2.imshow("image",output)
 #cv2.imwrite("output", output)
 
 cv2.waitKey()
-
