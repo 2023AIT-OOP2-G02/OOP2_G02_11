@@ -10,34 +10,44 @@ app.config["JSON_AS_ASCII"] = False  # 日本語などのASCII以外の文字列
 def index():
     return render_template("index.html")
 
-@app.route('/upload' , methods=['POST'])
+
+@app.route('/upload', methods=['POST'])
 def upload():
-    data = request.files.get('data') //TODO
-    
+    # 画像dataの取得
+    data = request.files.get('data')  # TODO
+
+    # image/inputに保存
+    data.save('image/input/' + data.filename)
+
     return 'upload success'
 
+
 # モザイク
-@app.route('/mosaic') # TODO
+@app.route('/mosaic')  # TODO
 def mosaic():
     return render_template("mosaic.html")
 
+
 # 枠で囲む
-@app.route('/frame') # TODO
+@app.route('/frame')  # TODO
 def frame():
     return render_template("frame.html")
 
+
 # 輪郭抽出
-@app.route('/contour') # TODO
+@app.route('/contour')  # TODO
 def contour():
     return render_template("contour.html")
 
+
 # グレイスケール
-@app.route('/grayscale') # TODO
+@app.route('/grayscale')  # TODO
 def grayscale():
     return render_template("grayscale.html")
 
+
 # 物体検出
-@app.route('/detection') # TODO
+@app.route('/detection')  # TODO
 def detection():
     return render_template("detection.html")
 
