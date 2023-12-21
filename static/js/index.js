@@ -1,8 +1,9 @@
+// DOMの取得
+const upload_button = document.getElementById("upload");
+const input_file = document.getElementById("file");
+const errorContainer = document.getElementById("error-container");
+const successContainer = document.getElementById("success-container");
 
-// アップロードボタン
-upload_button = document.getElementById("upload");
-// ファイル選択ボタン
-input_file = document.getElementById("file");
 console.log(input_file);
 
 let data = null;
@@ -23,6 +24,20 @@ upload_button.onclick = function () {
     fetch("/upload", {method: "POST", body: formData}).then(response => {
         response.json().then((data) => {
             console.log(data);
+            //失敗
+            if (data.error) {
+                errorContainer.innerText = data.error;
+                errorContainer.style.display = "inline-block";
+            //成功
+            } else if (data.success) {
+                successContainer.innerText = data.success;
+                successContainer.style.display = "inline-block";
+            //不明なエラー
+            } else {
+                errorContainer.innerText = "不明なエラーが発生しました。";
+                errorContainer.style.display = "inline-block";
+            }
+
         });
     });
 }
