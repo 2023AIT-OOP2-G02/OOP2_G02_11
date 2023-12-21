@@ -18,21 +18,22 @@
         <h1>画像処理(アップロード)</h1>
     </header>
 
-    <!--    見るページの選択-->
-    <ul class="sidenav">
-        <li><a class="active">Home</a></li>
-        <li><a>News</a></li>
-        <li><a>Contact</a></li>
-        <li><a>About</a></li>
-    </ul>
-
     <main>
-        <section>
-            <div>
-                <input id="file" type="file">
-                <button id="upload">アップロード</button>
-            </div>
-        </section>
+        <!--    見るページの選択-->
+        <nav>
+            <ul class="sidenav">
+                <li><a>顔検出(モザイク)</a></li>
+                <li><a>顔検出(枠)</a></li>
+                <li><a>輪郭抽出</a></li>
+                <li><a>グレースケール</a></li>
+                <li><a>物体検出</a></li>
+            </ul>
+        </nav>
+
+        <div id="upload_form">
+            <input id="file" type="file">
+            <button id="upload">アップロード</button>
+        </div>
 
     </main>
 </body>
