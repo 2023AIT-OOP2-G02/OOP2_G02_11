@@ -1,14 +1,19 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, Blueprint
 import json  # Python標準のJSONライブラリを読み込んで、データの保存等に使用する
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False  # 日本語などのASCII以外の文字列を返したい場合は、こちらを設定しておく
 
+#静的ディレクトリの追加
+add_app = Blueprint("image", __name__, static_url_path="/image", static_folder="./image")
+app.register_blueprint(add_app)
 
 # http://127.0.0.1:5000/
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("output.html")
+    # return render_template("index.html")
+
 
 
 #
