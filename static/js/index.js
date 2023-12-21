@@ -11,7 +11,7 @@ input_file.addEventListener("change", function () {
 
 upload_button.onclick = function () {
     let formData = new FormData();
-    formData.append("file", data);
+    formData.append("data", data);
     
     $.ajax({
         url: "/upload",
