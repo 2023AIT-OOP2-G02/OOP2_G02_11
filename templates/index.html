@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/index.css')}}">
-    <!--    <script defer src="{{ url_for('static', filename='addressbook.js') }}"></script>-->
 </head>
 
 <body>
@@ -19,7 +18,7 @@
     </header>
 
     <main>
-        <!--    見るページの選択-->
+        <!--　見るページの選択　-->
         <nav>
             <ul class="sidenav">
                 <li><a>顔検出(モザイク)</a></li>
@@ -30,10 +29,15 @@
             </ul>
         </nav>
 
+        <!--　画像入力フォーム　-->
         <div id="upload_form">
             <input id="file" type="file" accept=".jpg, .png">
             <button id="upload">アップロード</button>
         </div>
+
+        <!-- メッセージの表示領域　-->
+        <div id="success-container" role="alert" style="display: none;"></div>
+        <div id="error-container" role="alert" style="display: none;"></div>
 
     </main>
 </body>

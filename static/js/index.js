@@ -19,17 +19,31 @@ upload_button.onclick = function () {
     formData.append("data", data);
 
     // flaskにデータを送信
-    $.ajax({
-        url: "/upload",
-        type: "POST",
-        data: formData,
-        cache: false,
-        contentType: false,
-        processData: false,
-        dataType: 'text',
-    })
-    .done(function (response) {
-        // '/upload'の返り値を出力
-        console.log(response);
-    })
+    // 送信先 : /upload
+    fetch("/upload", {method: "POST", body: formData}).then(response => {
+        response.json().then((data) => {
+            console.log(data);
+        });
+    });
 }
+
+// $.ajax({
+//     url: "/upload",
+//     type: "POST",
+//     data: formData,
+//     cache: false,
+//     contentType: false,
+//     processData: false,
+//     dataType: 'text',
+// })
+// .done(function (response) { //responseはjson形式
+//     // if (response.success === ) {
+//     //     alert("アップロードに成功しました");
+//     // }
+//     // '/upload'の返り値を出力
+//
+//     response.json().then((data) => {
+//         console.log(data);
+//     });
+//
+// })

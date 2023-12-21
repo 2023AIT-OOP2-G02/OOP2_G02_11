@@ -13,13 +13,21 @@ def index():
 
 @app.route('/upload', methods=['POST'])
 def upload():
-    # 画像dataの取得
-    data = request.files.get('data')  # TODO
+    try:
+        # 画像dataの取得
+        data = request.files.get('data')  # TODO
 
-    # image/inputに保存
-    data.save('image/input/' + data.filename)
+        # image/inputに保存
+        data.save('image/input/' + data.filename)
+    except Exception as e:
+        print(e)
+        return jsonify({
+            "error": "画像の保存に失敗しました。"
+        })
 
-    return 'upload success'
+    return jsonify({
+        "success": "画像の保存に成功しました。"
+    })
 
 
 # モザイク
