@@ -31,9 +31,9 @@ div.content {
 	height: 1000px;
 }
 
-#upload_form{
+#main-content {
 	width: 50%;
-	margin: 0 auto;
+	display: inline-block;
 }
 
 nav {

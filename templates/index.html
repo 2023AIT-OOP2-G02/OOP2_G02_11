@@ -28,16 +28,17 @@
                 <li><a>物体検出</a></li>
             </ul>
         </nav>
+        <div id="main-content">
+            <!--　画像入力フォーム　-->
+            <div id="upload_form">
+                <input id="file" type="file" accept=".jpg, .png">
+                <button id="upload">アップロード</button>
+            </div>
 
-        <!--　画像入力フォーム　-->
-        <div id="upload_form">
-            <input id="file" type="file" accept=".jpg, .png">
-            <button id="upload">アップロード</button>
+            <!-- メッセージの表示領域　-->
+            <div id="success-container" role="alert" style="display: none;"></div>
+            <div id="error-container" role="alert" style="display: none;"></div>
         </div>
-
-        <!-- メッセージの表示領域　-->
-        <div id="success-container" role="alert" style="display: none;"></div>
-        <div id="error-container" role="alert" style="display: none;"></div>
 
     </main>
 </body>
