@@ -30,6 +30,6 @@ def face_mosaic(path):
         img[y:y+h, x:x+w] = face
 
         # モザイクをかけた画像を保存
-    cv2.imwrite("mosaic_output.jpg", img)
+    cv2.imwrite("image/output/mosaic_output.jpg", img)
 
 
