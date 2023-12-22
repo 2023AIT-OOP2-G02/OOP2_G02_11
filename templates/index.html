@@ -9,31 +9,42 @@
     <!-- new.css -->
     <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
-    <!--    <script defer src="{{ url_for('static', filename='addressbook.js') }}"></script>-->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/index.css')}}">
 </head>
 
 <body>
     <header>
         <h1>画像処理(アップロード)</h1>
     </header>
+
     <main>
-        <section>
-            <!--        サーチ用フォーム-->
-            <form id="search" action="/address" method="GET">
-                <div>
-                    <input type="text" id="search-firstname" placeholder="First name" name="fn">
-                    <button id="search-submit">Search</button>
-                </div>
-            </form>
-        </section>
-        <!--    リストを作成-->
-        <ul>
-            <li>ぐれー</li>
-            <li>Canny</li>
-            <li>みたいな</li>
-        </ul>
+        <!--　見るページの選択　-->
+        <nav>
+            <ul class="sidenav">
+                <li><a>顔検出(モザイク)</a></li>
+                <li><a>顔検出(枠)</a></li>
+                <li><a>輪郭抽出</a></li>
+                <li><a>グレースケール</a></li>
+                <li><a>物体検出</a></li>
+            </ul>
+        </nav>
+        <div id="main-content">
+            <!--　画像入力フォーム　-->
+            <div id="upload_form">
+                <input id="file" type="file" accept=".jpg, .png">
+                <button id="upload">アップロード</button>
+            </div>
+
+            <!-- メッセージの表示領域　-->
+            <div id="success-container" role="alert" style="display: none;"></div>
+            <div id="error-container" role="alert" style="display: none;"></div>
+        </div>
 
     </main>
 </body>
+
+<script type="text/javascript" src="{{url_for('static', filename='js/index.js')}}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
 </html>
