@@ -11,8 +11,7 @@ app.register_blueprint(add_app)
 # http://127.0.0.1:5000/
 @app.route('/')
 def index():
-    return render_template("output.html")
-    # return render_template("index.html")
+    return render_template("index.html")
 
 
 
