@@ -31,14 +31,14 @@ div.content {
 	height: 1000px;
 }
 
-#upload_form{
-	margin-left: 200px;
+#main-content {
+	width: 50%;
+	display: inline-block;
 }
 
 nav {
-	position: absolute;
-	left: 0px;
-	width: 200px;
+	float: left;
+	margin-right: 1rem;
 }
 
 @media screen and (max-width: 480px) {
@@ -47,3 +47,23 @@ nav {
 		float: none;
 	}
 }
+
+#success-container,
+#error-container {
+	margin: 1rem 0;
+	padding: 1rem;
+	border: 1px solid #e9ecef;
+	border-left-width: 0.25rem;
+
+	border-radius: 0.25rem;
+}
+#error-container {
+	color: #dc3545;
+	border-left-color: hotpink;
+}
+
+#success-container {
+	color: darkgreen;
+	border-left-color: #5bc0de;
+}
+
