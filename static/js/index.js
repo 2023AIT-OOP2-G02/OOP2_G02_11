@@ -4,7 +4,7 @@ const input_file = document.getElementById("file");
 const errorContainer = document.getElementById("error-container");
 const successContainer = document.getElementById("success-container");
 
-console.log(input_file);
+// console.log(input_file);
 
 let data = null;
 
