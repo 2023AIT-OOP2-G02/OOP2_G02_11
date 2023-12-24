@@ -10,7 +10,7 @@ let data = null;
 
 input_file.addEventListener("change", function () {
     data = input_file.files[0];
-    console.log(data);
+    // console.log(data);
 });
 
 // アップロードボタンが押下時の処理
