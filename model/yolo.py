@@ -6,4 +6,6 @@ def modelpicture(input_img):
 
     # 入力画像
     results = model(input_img,save=True)
-modelpicture('image/input/test.jpg')
+    
+if __name__ == "__main__":
+    modelpicture('image/input/test1.jpg')
