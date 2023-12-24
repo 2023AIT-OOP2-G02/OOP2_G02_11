@@ -21,11 +21,12 @@
         <!--　見るページの選択　-->
         <nav>
             <ul class="sidenav">
-                <li><a>顔検出(モザイク)</a></li>
-                <li><a>顔検出(枠)</a></li>
-                <li><a>輪郭抽出</a></li>
-                <li><a>グレースケール</a></li>
-                <li><a>物体検出</a></li>
+                <li id="home"><a href="{{url_for('index')}}">ホーム(アップロード)</a></li>
+                <li id="mosaic"><a href="{{url_for('mosaic')}}">顔検出(モザイク)</a></li>
+                <li id="frame"><a href="{{url_for('frame')}}">顔検出(枠)</a></li>
+                <li id="contour"><a href="{{url_for('contour')}}">輪郭抽出</a></li>
+                <li id="grayscale"><a href="{{url_for('grayscale')}}">グレースケール</a></li>
+                <li id="detection"><a href="{{url_for('detection')}}">物体検出</a></li>
             </ul>
         </nav>
         <div id="main-content">

@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>detection</title>
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/result_page.css')}}">
 </head>
+
 <body>
-    
+    <header>
+        <h1>物体検出</h1>
+    </header>
+
+    <main>
+        <!--　見るページの選択　-->
+        <nav>
+            <ul class="sidenav">
+                <li id="home"><a href="{{url_for('index')}}">ホーム(アップロード)</a></li>
+                <li id="mosaic"><a href="{{url_for('mosaic')}}">顔検出(モザイク)</a></li>
+                <li id="frame"><a href="{{url_for('frame')}}">顔検出(枠)</a></li>
+                <li id="contour"><a href="{{url_for('contour')}}">輪郭抽出</a></li>
+                <li id="grayscale"><a href="{{url_for('grayscale')}}">グレースケール</a></li>
+                <li id="detection"><a href="{{url_for('detection')}}">物体検出</a></li>
+            </ul>
+        </nav>
+        <div id="main-content">
+            <!--　出力画像の表示　-->
+
+        </div>
+
+    </main>
+
 </body>
+
 </html>

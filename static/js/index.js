@@ -4,13 +4,13 @@ const input_file = document.getElementById("file");
 const errorContainer = document.getElementById("error-container");
 const successContainer = document.getElementById("success-container");
 
-console.log(input_file);
+// console.log(input_file);
 
 let data = null;
 
 input_file.addEventListener("change", function () {
     data = input_file.files[0];
-    console.log(data);
+    // console.log(data);
 });
 
 // アップロードボタンが押下時の処理
