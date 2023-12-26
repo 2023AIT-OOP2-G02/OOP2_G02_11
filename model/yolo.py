@@ -15,6 +15,7 @@ def modelpicture(filename): # 拡張子付き
     
     output_filename = filename.split('.')[0] + '_detection.jpg'
     cv2.imwrite('image/output/detection/' + output_filename, result_img)
-    
+
+
 if __name__ == "__main__":
     modelpicture('dog.jpg')
