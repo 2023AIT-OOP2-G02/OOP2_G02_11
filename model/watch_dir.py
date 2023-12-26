@@ -7,7 +7,7 @@ from watchdog.events import FileSystemEventHandler
 class DirWatcher(FileSystemEventHandler):
     def on_created(self, event):
         if event.is_directory:
-            print(f"ファイルが作成されました: {event.src_path}")
+            print(f"フォルダが作成されました: {event.src_path}")
         else:
             print(f"File created: {event.src_path}")
 
