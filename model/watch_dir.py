@@ -37,6 +37,7 @@ class DirWatcher(FileSystemEventHandler):
 
         print("画像処理が完了しました。")
 
+
 # ディレクトリ監視を開始する関数
 def start_watchdog(directory_path):
     dir_watcher = DirWatcher()
@@ -50,7 +51,6 @@ def start_watchdog(directory_path):
     except KeyboardInterrupt:
         observer.stop()
     observer.join()
-
 
 # テスト用
 # if __name__ == "__main__":
