@@ -6,10 +6,20 @@ from watchdog.events import FileSystemEventHandler
 # ディレクトリを監視
 class DirWatcher(FileSystemEventHandler):
     def on_created(self, event):
-        if event.is_directory:
-            print(f"ファイルが作成されました: {event.src_path}")
+        if not event.is_directory:
+            # ファイル名のみを取得
+            file_name = event.src_path.split("/")[-1]
+            print(f"ファイルが作成されました。: {file_name}")
+
+            # 画像処理
+
+
+
+
+
+
         else:
-            print(f"File created: {event.src_path}")
+            print(f"ディレクトリが作成されました。: {event.src_path}")
 
 
 # ディレクトリ監視を開始する関数
