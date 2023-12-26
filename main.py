@@ -33,7 +33,6 @@ def upload():
         # image/inputに保存
         data.save('image/input/' + data.filename)
 
-        # TODO: 画像の処理
     except Exception as e:
         print(e)
         return jsonify({

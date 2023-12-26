@@ -1,7 +1,8 @@
 import cv2
 
-def gray_scale(filename): # 拡張子付き
-    
+
+def gray_scale(filename):  # 拡張子付き
+
     path = 'image/input/' + filename
     im = cv2.imread(path)
 
@@ -11,6 +12,7 @@ def gray_scale(filename): # 拡張子付き
 
     output_filename = filename.split('.')[0] + '_gray.jpg'
     cv2.imwrite('image/output/grayscale/' + output_filename, im_gray_th_otsu)
+
 
 if __name__ == "__main__":
     gray_scale('cat.jpg')
