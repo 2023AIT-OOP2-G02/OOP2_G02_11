@@ -1,6 +1,9 @@
+import threading
+
 from flask import Flask, request, render_template, jsonify, Blueprint
 import json  # Python標準のJSONライブラリを読み込んで、データの保存等に使用する
 
+from model.watch_dir import start_watchdog
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False  # 日本語などのASCII以外の文字列を返したい場合は、こちらを設定しておく
@@ -13,6 +16,11 @@ app.register_blueprint(add_app)
 # http://127.0.0.1:5000/
 @app.route('/')
 def index():
+    # ディレクトリの監視を並列で開始
+    directory_to_watch = "./image/input"  # 保存先
+    thread = threading.Thread(target=start_watchdog, args=(directory_to_watch,))
+    thread.start()
+
     return render_template("index.html")
 
 

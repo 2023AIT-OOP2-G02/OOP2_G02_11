@@ -12,6 +12,7 @@ class DirWatcher(FileSystemEventHandler):
             print(f"File created: {event.src_path}")
 
 
+# ディレクトリ監視を開始する関数
 def start_watchdog(directory_path):
     dir_watcher = DirWatcher()
     observer = Observer()
@@ -26,6 +27,7 @@ def start_watchdog(directory_path):
     observer.join()
 
 
-if __name__ == "__main__":
-    directory_to_watch = "../image/input"
-    start_watchdog(directory_to_watch)
+# テスト用
+# if __name__ == "__main__":
+#     directory_to_watch = "../image/input"
+#     start_watchdog(directory_to_watch)
