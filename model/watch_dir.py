@@ -6,6 +6,7 @@ from model.face_detect_rectangle import detect_face
 from model.face_mosaic import face_mosaic
 from model.gray_scale import gray_scale
 from model.outline_extraction import outline_extract
+from model.yolo import modelpicture
 
 
 # ディレクトリを監視
@@ -27,7 +28,8 @@ class DirWatcher(FileSystemEventHandler):
             face_mosaic(file_name)
             gray_scale(file_name)
             outline_extract(file_name)
-            # modelpicture(file_name)
+            modelpicture(file_name)
+
         except Exception as e:
             print(e)
             print("画像処理に失敗しました。")
