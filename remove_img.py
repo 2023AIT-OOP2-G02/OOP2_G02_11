@@ -17,9 +17,9 @@ def delete_image_files(directory):
             print(f"Deleted: {image_file}")
 
 if __name__ == "__main__":
-    delete_image_files('./image/input')
-    delete_image_files('./image/output/contour/')
-    delete_image_files('./image/output/detection/')
-    delete_image_files('./image/output/frame/')
-    delete_image_files('./image/output/grayscale/')
-    delete_image_files('./image/output/mosaic/')
+    delete_image_files('image/input')
+    delete_image_files('image/output/contour/')
+    delete_image_files('image/output/detection/')
+    delete_image_files('image/output/frame/')
+    delete_image_files('image/output/grayscale/')
+    delete_image_files('image/output/mosaic/')

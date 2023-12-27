@@ -4,6 +4,7 @@ from flask import Flask, request, render_template, jsonify, Blueprint
 import json  # Python標準のJSONライブラリを読み込んで、データの保存等に使用する
 
 from model.watch_dir import start_watchdog
+from get_imgs_filepath import get_images_filepath
 
 
 app = Flask(__name__)
@@ -74,7 +75,10 @@ def contour():
 # グレイスケール
 @app.route('/grayscale')  # TODO
 def grayscale():
-    return render_template("grayscale.html")
+    
+    files = get_images_filepath('image/output/grayscale/')
+    
+    return render_template("grayscale.html", files=files)
 
 
 # 物体検出
