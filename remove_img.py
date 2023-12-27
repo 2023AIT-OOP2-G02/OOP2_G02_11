@@ -1,0 +1,1 @@
+# input と　output のimgを削除する

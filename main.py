@@ -5,6 +5,7 @@ import json  # Python標準のJSONライブラリを読み込んで、データ�
 
 from model.watch_dir import start_watchdog
 
+
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False  # 日本語などのASCII以外の文字列を返したい場合は、こちらを設定しておく
 
