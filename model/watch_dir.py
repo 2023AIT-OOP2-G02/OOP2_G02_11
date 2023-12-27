@@ -18,7 +18,7 @@ class DirWatcher(FileSystemEventHandler):
             return
 
         # ファイル名のみを取得
-        file_name = event.src_path.split("\\")[-1]
+        file_name = event.src_path.split("/")[-1]
         print(f"ファイルが作成されました。: {file_name}")
 
         # 画像処理
