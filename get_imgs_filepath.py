@@ -14,6 +14,12 @@ def get_images_filepath(directory):
     # path
     return image_files
 
+def get_filenames(files): # ファイルパスのリストをファイル名のリストに変換
+    filenames = []
+    for file in files:
+        filenames.append(file.split('/')[-1])
+    return filenames
+
 
 if __name__ == "__main__":
     # 使用例

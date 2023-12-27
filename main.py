@@ -5,13 +5,15 @@ import json  # Python標準のJSONライブラリを読み込んで、データ�
 
 from model.watch_dir import start_watchdog
 from get_imgs_filepath import get_images_filepath
+from get_imgs_filepath import get_filenames
 
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False  # 日本語などのASCII以外の文字列を返したい場合は、こちらを設定しておく
 
 # 静的ディレクトリの追加
-add_app = Blueprint("image", __name__, static_url_path="/image", static_folder="./image")
+add_app = Blueprint("image", __name__,
+                    static_url_path="/image", static_folder="./image")
 app.register_blueprint(add_app)
 
 # ディレクトリの監視を並列で開始
@@ -54,7 +56,19 @@ def upload():
     })
 
 
+@app.route('/fetch_files_path', methods = ['POST'])  # TODO
+def fetch_files_path():
+    directory = request.form['directory']
+    files_path = get_images_filepath(directory)
+    
+    return jsonify({
+        "files_path": files_path
+    })
+
+
 # モザイク
+
+
 @app.route('/mosaic')  # TODO
 def mosaic():
     return render_template("mosaic.html")
@@ -75,10 +89,11 @@ def contour():
 # グレイスケール
 @app.route('/grayscale')  # TODO
 def grayscale():
-    
+
     files = get_images_filepath('image/output/grayscale/')
-    
-    return render_template("grayscale.html", files=files)
+    filenames = get_filenames(files)
+
+    return render_template("grayscale.html", files=files, filenames=filenames)
 
 
 # 物体検出

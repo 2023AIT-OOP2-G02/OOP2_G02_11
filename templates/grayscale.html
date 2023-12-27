@@ -29,16 +29,12 @@
         <div id="main-content">
             <!--　出力画像の表示　-->
 
-            {% for img in files %}
-            <div class="img">
-                <img src="{{img}}">
-            </div>
-            {% endfor %}
 
         </div>
 
     </main>
 
 </body>
+<script type="text/javascript" src="{{url_for('static', filename='js/result_page.js')}}"></script>
 
 </html>
