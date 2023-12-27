@@ -18,20 +18,20 @@ fetch("/fetch_files_path", { method: "POST", body: formData }).then(response => 
             // 画像のソースを設定
             img.src = filepath;  // 画像のパスを指定
 
-            width = img.width;
-            height = img.height;
-
-            // 画像のサイズを調整(縦横比を維持)
-            scale = Math.min(280 / width, 196 / height);
-            width = width * scale;
-            height = height * scale;
-
-            // 画像のサイズを設定
-            img.width = width;
-            img.height = height;
-
             // 画像が読み込まれたら、それをbodyに追加
             img.onload = function () {
+                width = img.width;
+                height = img.height;
+
+                // 画像のサイズを調整(縦横比を維持)
+                scale = Math.min(280 / width, 196 / height);
+                width = width * scale;
+                height = height * scale;
+
+                // 画像のサイズを設定
+                img.width = width;
+                img.height = height;
+
                 div_rendering = document.createElement("div");
                 div_rendering.width = 280;
                 div_rendering.height = 196;
@@ -41,12 +41,12 @@ fetch("/fetch_files_path", { method: "POST", body: formData }).then(response => 
                 div_rendering.style.position = 'relative';
                 div_rendering.appendChild(img);
 
-                // let a = document.createElement('a');
-                // a.textContent = filepath;
-                // a.href = filepath;      // リンク先を画像のURLに設定
-                // a.target = '_blank';    // 新しいタブでリンクを開く
+                let a = document.createElement('a');
+                a.textContent = filepath;
+                a.href = filepath;      // リンク先を画像のURLに設定
+                a.target = '_blank';    // 新しいタブでリンクを開く
 
-                // div_rendering.appendChild(a);
+                div_rendering.appendChild(a);
                 main_content.appendChild(div_rendering);
             };
         }
