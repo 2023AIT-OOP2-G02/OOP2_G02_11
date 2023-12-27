@@ -56,7 +56,7 @@ def upload():
     })
 
 
-@app.route('/fetch_files_path', methods = ['POST'])  # TODO
+@app.route('/fetch_files_path', methods = ['POST'])
 def fetch_files_path():
     directory = request.form['directory']
     files_path = get_images_filepath(directory)
@@ -67,33 +67,31 @@ def fetch_files_path():
 
 
 # モザイク
-
-
-@app.route('/mosaic')  # TODO
+@app.route('/mosaic')
 def mosaic():
     return render_template("mosaic.html")
 
 
 # 枠で囲む
-@app.route('/frame')  # TODO
+@app.route('/frame')
 def frame():
     return render_template("frame.html")
 
 
 # 輪郭抽出
-@app.route('/contour')  # TODO
+@app.route('/contour')
 def contour():
     return render_template("contour.html")
 
 
 # グレイスケール
-@app.route('/grayscale')  # TODO
+@app.route('/grayscale')
 def grayscale():
     return render_template("grayscale.html")
 
 
 # 物体検出
-@app.route('/detection')  # TODO
+@app.route('/detection')
 def detection():
     return render_template("detection.html")
 

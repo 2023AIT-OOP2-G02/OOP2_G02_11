@@ -4,6 +4,7 @@ from model.gray_scale import gray_scale
 from model.outline_extraction import outline_extract
 from model.yolo import modelpicture
 
+
 def img_code_run(filename):
 
     detect_face(filename)
@@ -11,6 +12,7 @@ def img_code_run(filename):
     gray_scale(filename)
     outline_extract(filename)
     modelpicture(filename)
+
 
 if __name__ == "__main__":
     img_code_run('cat.jpg')

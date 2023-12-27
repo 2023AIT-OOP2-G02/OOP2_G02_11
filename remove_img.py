@@ -16,6 +16,7 @@ def delete_image_files(directory):
             os.remove(image_file)
             print(f"Deleted: {image_file}")
 
+
 if __name__ == "__main__":
     delete_image_files('image/input')
     delete_image_files('image/output/contour/')
