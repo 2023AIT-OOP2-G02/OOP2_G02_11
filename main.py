@@ -13,14 +13,21 @@ app.config["JSON_AS_ASCII"] = False  # 日本語などのASCII以外の文字列
 add_app = Blueprint("image", __name__, static_url_path="/image", static_folder="./image")
 app.register_blueprint(add_app)
 
+# ディレクトリの監視を並列で開始
+directory_to_watch = "./image/input"  # 保存先
+thread = threading.Thread(target=start_watchdog, args=(directory_to_watch,))
+thread.daemon = True    # メインスレッドが終了したら、スレッドも終了する
+thread.start()
+
 
 # http://127.0.0.1:5000/
 @app.route('/')
 def index():
-    # ディレクトリの監視を並列で開始
-    directory_to_watch = "./image/input"  # 保存先
-    thread = threading.Thread(target=start_watchdog, args=(directory_to_watch,))
-    thread.start()
+    # このコードは上に書いたほうが良い気がする (変更済み)
+    # # ディレクトリの監視を並列で開始
+    # directory_to_watch = "./image/input"  # 保存先
+    # thread = threading.Thread(target=start_watchdog, args=(directory_to_watch,))
+    # thread.start()
 
     return render_template("index.html")
 
