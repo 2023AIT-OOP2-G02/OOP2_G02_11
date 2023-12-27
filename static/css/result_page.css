@@ -38,7 +38,7 @@ div.content {
 
 nav {
 	float: left;
-	margin-right: 1rem;;
+	margin-right: 1rem;
 }
 
 @media screen and (max-width: 480px) {
@@ -47,3 +47,12 @@ nav {
 		float: none;
 	}
 }
+
+img {
+	display: block;
+}
+
+.rendering > a {
+	font-size: 50%;
+}
+
