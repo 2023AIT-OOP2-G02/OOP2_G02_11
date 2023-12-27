@@ -89,11 +89,7 @@ def contour():
 # グレイスケール
 @app.route('/grayscale')  # TODO
 def grayscale():
-
-    files = get_images_filepath('image/output/grayscale/')
-    filenames = get_filenames(files)
-
-    return render_template("grayscale.html", files=files, filenames=filenames)
+    return render_template("grayscale.html")
 
 
 # 物体検出
